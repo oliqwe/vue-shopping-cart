@@ -1,0 +1,9 @@
+@import '~bulma/bulma';
+.box {
+    transition: box-shadow 150ms linear;
+    text-align: center;
+    border: 3px solid #fff;
+    border-radius: 2px;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .28);
+}
