@@ -1,53 +1,53 @@
 <template>
-<div class="container has-text-centered">
-  <div class="columns is-vcentered is-multiline">
-    <div class="column is-3" v-for="(product) in productList" :key="product.name">
-      <div class="card product box">
-        <div class="card-image">
-          <figure class="image">
-            <!-- <img :src='require("" + product.image + "")'> -->
-            <img :src="require('./../assets/images/' + product.image + '')">
-          </figure>
-        </div>
-        <div class="card-content">
-          <div class="content">
-            <p class="is-capitalized"> {{product.name}}</p>
+  <div class="container">
+    <div class="columns is-vcentered is-multiline is-mobile">
+      <div class="column is-11-mobile is-6-tablet is-4-desktop is-3-widescreen is-3-fullhd" v-for="(product) in productList" :key="product.name">
+        <div class="card product box">
+          <div class="card-image">
+            <figure class="image">
+              <img :src="require('./../assets/images/' + product.image + '')">
+            </figure>
           </div>
-          <div class="media">
-            <div class="media-content">
-              <p class="product-price has-text-weight-bold">${{product.price}} / Кг</p>
+          <div class="card-content">
+            <div class="content">
+              <p class="is-capitalized"> {{product.name}}</p>
             </div>
-            <div class="media-right">
-              <a class="button is-small" @click="addToBasket(product)">Добавить</a>
+            <div class="media">
+              <div class="media-content">
+                <p class="product-price has-text-weight-bold">${{product.price}} / Кг</p>
+              </div>
+              <div class="media-right">
+                <a class="button is-small" @click="addToBasket(product)">Добавить</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-
 </template>
 
 <script>
 import { mapGetters } from "vuex";
+
 export default {
-  computed:{
+  computed: {
     ...mapGetters(["productList"])
   },
-  mounted(){
-  if (window.localStorage.getItem("shoppingCart") !== null) {
-        const products = JSON.parse(window.localStorage.getItem("shoppingCart"))
-        this.$store.commit('getProductFromLocalStorage', products)
+  mounted() {
+    if (window.localStorage.getItem("shoppingCart") !== null) {
+      const products = JSON.parse(window.localStorage.getItem("shoppingCart"))
+      this.$store.commit('getProductFromLocalStorage', products)
     }
   },
-  methods:{
-    addToBasket(product){
-        this.$store.dispatch('addProductToCart', product)
+  methods: {
+    addToBasket(product) {
+      this.$store.dispatch('addProductToCart', product)
     }
   }
 }
 </script>
+
 <style lang="scss" scoped>
 .card {
   &:hover {
@@ -76,6 +76,4 @@ export default {
     }
   }
 }
-
-
 </style>

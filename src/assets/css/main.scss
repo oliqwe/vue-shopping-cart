@@ -1,4 +1,26 @@
 @import '~bulma/bulma';
+html {
+    height: 100%;
+    body {
+        height: 100%;
+        #app {
+            background-color: #f8f8f8;
+            height: 100%;
+            .products-container {
+                padding-top: 30px;
+            }
+            .component-fade-enter-active,
+            .component-fade-leave-active {
+                transition: opacity .2s ease;
+            }
+            .component-fade-enter,
+            .component-fade-leave-to {
+                opacity: 0;
+            }
+        }
+    }
+}
+
 .box {
     transition: box-shadow 150ms linear;
     text-align: center;

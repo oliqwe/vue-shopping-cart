@@ -3,7 +3,7 @@
   <nav class="level is-mobile top-nav">
     <div class="level-left"></div>
     <div class="level-right">
-      <div class="level-item basket">        
+      <div class="level-item basket">
         <!-- <img src="./../assets/images/basket_long.svg" alt=""> -->
         <img src="./../assets/images/basket.svg" alt="">
       </div>
