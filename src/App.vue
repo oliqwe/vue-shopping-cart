@@ -18,5 +18,6 @@ export default {
     appNav: Nav,
   }
 }
+
 </script>
 

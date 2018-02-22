@@ -1,4 +1,4 @@
-# shop
+# vue-shopping-cart
 
 > shopping car test project
 
